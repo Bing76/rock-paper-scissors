@@ -1,0 +1,38 @@
+body {
+    font-family: Verdana, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    color: white;
+    background-color: navy;
+    font-size: 24px;
+    height: 64px;
+    width: 256px;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.player-selections {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 64px;
+}
+
+.results {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.score {
+    margin-left: 8px;
+}
+
+
