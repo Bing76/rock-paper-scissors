@@ -51,6 +51,8 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+humanScore = 0;
+computerScore = 0;
 playerChoice = null;
 
 const btnRock = document.querySelector(".btn-rock");
