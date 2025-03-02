@@ -10,6 +10,7 @@ const btnScissors = document.querySelector(".btn-scissors");
 const humanScoreDisplay = document.querySelector(".human-score");
 const computerScoreDisplay = document.querySelector(".computer-score");
 const roundWinnerDisplay = document.querySelector(".round-winner");
+const winnerDisplay = document.querySelector(".winner");
 
 
 function getComputerChoice() {
@@ -60,6 +61,12 @@ function playRound(humanChoice, computerChoice) {
     roundWinnerDisplay.textContent = winner.toUpperCase();
     humanScoreDisplay.textContent = humanScore;
     computerScoreDisplay.textContent = computerScore;
+
+    if (humanScore >= 5) {
+        winnerDisplay.textContent = "Player wins!";
+    } else if (computerScore >= 5) {
+        winnerDisplay.textContent = "Computer wins!";
+    }
 
 }
 
