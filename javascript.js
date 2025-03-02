@@ -1,4 +1,13 @@
 
+let humanScore = 0;
+let computerScore = 0;
+let playerChoice = null;
+
+const btnRock = document.querySelector(".btn-rock");
+const btnPaper = document.querySelector(".btn-paper");
+const btnScissors = document.querySelector(".btn-scissors");
+
+
 function getComputerChoice() {
     rdm = Math.random();
     if (rdm <= 0.33) {
@@ -50,14 +59,6 @@ function playRound(humanChoice, computerChoice) {
         console.log("Computer wins!");
     }
 }
-
-humanScore = 0;
-computerScore = 0;
-playerChoice = null;
-
-const btnRock = document.querySelector(".btn-rock");
-const btnPaper = document.querySelector(".btn-paper");
-const btnScissors = document.querySelector(".btn-scissors");
 
 btnRock.addEventListener("click", () => {
     playRound("rock", getComputerChoice());
