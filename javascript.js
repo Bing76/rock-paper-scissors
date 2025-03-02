@@ -10,23 +10,6 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
-    choice = prompt("Rock, paper or scissors?");
-
-    if (choice === null) {
-        console.log("Please enter a selection!");
-        return;
-    }
-
-    choice = choice.trim().toLowerCase();
-    if (choice !== "rock" && choice !== "paper" && choice !== "scissors") {
-        console.log("Please enter rock, paper or scissors!");
-        return;
-    }
-    
-    return choice;
-}
-
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         console.log("Tie!");
@@ -68,27 +51,22 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-function playGame() {
-    humanScore = 0;
-    computerScore = 0;
-    
-    for (let rounds = 0; rounds < 5; rounds++) {
-        humanChoice = getHumanChoice();
-        computerChoice = getComputerChoice();
-        
-        console.log("Player choice: " + humanChoice);
-        console.log("Compuer choice: " + computerChoice);
-        
-        playRound(humanChoice, computerChoice);
-    }
+playerChoice = null;
 
-    if (humanScore === computerScore) {
-        console.log("GAME TIE");
-    } else if (humanScore > computerScore) {
-        console.log("PLAYER WINS");
-    } else {
-        console.log("COMPUTER WINS");
-    }
-}
+const btnRock = document.querySelector(".btn-rock");
+const btnPaper = document.querySelector(".btn-paper");
+const btnScissors = document.querySelector(".btn-scissors");
+
+btnRock.addEventListener("click", () => {
+    playRound("rock", getComputerChoice());
+})
+
+btnPaper.addEventListener("click", () => {
+    playRound("paper", getComputerChoice());
+})
+
+btnScissors.addEventListener("click", () => {
+    playRound("scissors", getComputerChoice());
+})
 
 
