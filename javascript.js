@@ -7,6 +7,10 @@ const btnRock = document.querySelector(".btn-rock");
 const btnPaper = document.querySelector(".btn-paper");
 const btnScissors = document.querySelector(".btn-scissors");
 
+const humanScoreDisplay = document.querySelector(".human-score");
+const computerScoreDisplay = document.querySelector(".computer-score");
+const roundWinnerDisplay = document.querySelector(".round-winner");
+
 
 function getComputerChoice() {
     rdm = Math.random();
@@ -21,7 +25,7 @@ function getComputerChoice() {
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
-        console.log("Tie!");
+        roundWinnerDisplay.textContent = "TIE";
         return;
     } 
 
@@ -53,11 +57,10 @@ function playRound(humanChoice, computerChoice) {
         }    
     }
 
-    if (winner === "human") {
-        console.log("Human wins!");
-    } else {
-        console.log("Computer wins!");
-    }
+    roundWinnerDisplay.textContent = winner.toUpperCase();
+    humanScoreDisplay.textContent = humanScore;
+    computerScoreDisplay.textContent = computerScore;
+
 }
 
 btnRock.addEventListener("click", () => {
